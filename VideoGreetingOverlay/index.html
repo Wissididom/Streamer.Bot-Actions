@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<!--
+Based on https://vrflad.com/latest/
+Options: user / video
+
+Optional Options: server / subid
+-->
+	<head>
+		<title>Wissididom's VideoGreeter for streamer bot.</title>
+		<style></style>
+		<script>
+			function connectws() {
+				if ("WebSocket" in window) {
+					var urlParams = new URLSearchParams(window.location.search);
+					var server = urlParams.get('server');
+					var subid = urlParams.get('subid') || "123";
+					if (!(server === null)) {
+						server = "ws://" + server + "/";
+					} else {
+						server = "ws://localhost:8080/";
+					}
+					const ws = new WebSocket(server);
+					ws.onclose = function () {
+						// "connectws" is the function we defined previously
+						setTimeout(connectws, 10000);
+					};
+					ws.onopen = function () {
+						ws.send(JSON.stringify(
+							{
+								"request": "Subscribe",
+								"events": {
+									"Twitch": [
+										"ChatMessage"
+									]
+								},
+								"id": subid
+							}
+						));
+					}
+					ws.onmessage = function (event) {
+						// https://wiki.streamer.bot/en/Servers-Clients/WebSocket-Server/Events
+						// grab message and parse JSON
+						const msg = event.data;
+						const wsdata = JSON.parse(msg);
+						// check for events to trigger
+						if (!wsdata.event) return;
+						console.log(wsdata);
+						if (wsdata.event.source == 'Twitch') {
+							if (wsdata.event.type == 'ChatMessage') {
+								//alert(`trigger ChatMessage event for ${wsdata.data.message.displayName}`);
+								var username = wsdata.data.message.username;
+								// TODO Load Video for User
+							}
+						}
+					};
+				}
+			}
+		</script>
+	</head>
+	<body onload="setTimeout('connectws();',100);">
+		<div id="overalldiv"></div>
+	</body>
+</html>
