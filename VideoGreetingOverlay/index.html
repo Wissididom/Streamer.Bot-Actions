@@ -30,8 +30,8 @@ Optional Options: server / subid
 							{
 								"request": "Subscribe",
 								"events": {
-									"Twitch": [
-										"ChatMessage"
+									"General": [
+										"Custom"
 									]
 								},
 								"id": subid
@@ -50,15 +50,26 @@ Optional Options: server / subid
 							if (wsdata.event.type == 'ChatMessage') {
 								//alert(`trigger ChatMessage event for ${wsdata.data.message.displayName}`);
 								var username = wsdata.data.message.username;
-								// TODO Load Video for User
+							}
+						} else if (wsdata.event.source == 'None') {
+							if (wsdata.event.type == 'Custom') {
+								//alert(`trigger custom event for ${wsdata.data.username} - ${wsdata.data.videoUrl}`);
+								var username = wsdata.data.username;
+								var videoUrl = wsdata.data.videoUrl;
+								document.getElementById('video').style.display = 'block';
+								document.getElementById('video').src = videoUrl;
+								document.getElementById('video').play();
 							}
 						}
 					};
+					document.getElementById('video').addEventListener('ended', () => {
+						document.getElementById('video').style.display = 'none';
+					});
 				}
 			}
 		</script>
 	</head>
 	<body onload="setTimeout('connectws();',100);">
-		<div id="overalldiv"></div>
+		<video id="video" style="width: 100%; height: 100%;"></video>
 	</body>
 </html>
