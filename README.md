@@ -12,6 +12,4 @@
 
 [SpeakWithSpeakerBot](SpeakWithSpeakerBot/README.md)
 
-[TimeoutGivenUserFor2Minutes](TimeoutGivenUserFor2Minutes/README.md)
-
-[TimeoutGivenUserFor10Minutes](TimeoutGivenUserFor10Minutes/README.md)
+[TimeoutGivenUser](TimeoutGivenUser/README.md)
