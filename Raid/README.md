@@ -1,3 +1,5 @@
 # Streamer.Bot-Actions - Raid
 
-TODO: Describe how to use it
+1. Download and Import [the Action](Raid.sb)
+2. Connect the `Raid` Action to an Event in `Platforms->Twitch->Events->Raid->Start|Send` (`Start` is when the Raid-Countdown starts and `Send` is when the Viewers are getting sent to the other channel. Choose when you prefer the Action being executed)
+3. Streamer.Bot should now automatically send in Chat where the Raid will go/went. By Default the format is `%raidUser%: https://www.twitch.tv/%raidUserName%` (e. g. `Wissididom: https://www.twitch.tv/wissididom`)
