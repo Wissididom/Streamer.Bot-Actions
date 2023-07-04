@@ -8,8 +8,6 @@
 
 [OfflineChannelLock](OfflineChannelLock/README.md)
 
-[PrintFollowerEventsToFile](PrintFollowerEventsToFile/README.md)
-
 [Raid](Raid/README.md)
 
 [SpeakWithSpeakerBot](SpeakWithSpeakerBot/README.md)
