@@ -13,3 +13,5 @@
 [SpeakWithSpeakerBot](SpeakWithSpeakerBot/README.md)
 
 [TimeoutGivenUser](TimeoutGivenUser/README.md)
+
+[Timer](Timer/README.md)
