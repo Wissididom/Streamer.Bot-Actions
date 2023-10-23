@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#time {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: 40pt;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="time"></span>
+		<script>
+			function connectws() {
+				if ("WebSocket" in window) {
+					const ws = new WebSocket("ws://localhost:8080/");
+					ws.onopen = () => {
+						ws.send(JSON.stringify(
+							{
+								request: "Subscribe",
+								events: {
+									General: [
+										"Custom"
+									]
+								},
+								id: "123"
+							}
+						));
+					}
+					ws.onmessage = (event) => {
+						const msg = event.data;
+						console.log(msg);
+						const wsdata = JSON.parse(msg);
+						if (wsdata.event?.source === 'None') {
+							if (wsdata.event.type === 'Custom') {
+								if (wsdata.data.time === 0) {
+									document.getElementById("time").innerText = '';
+								} else {
+									let seconds = wsdata.data.time;
+									let hoursLeft = Math.floor(seconds / 3600);
+									let min = Math.floor((seconds - hoursLeft * 3600) / 60);
+									let secondsLeft = seconds - hoursLeft * 36000 - min * 60;
+									secondsLeft = Math.round(secondsLeft * 100) / 100;
+									let timeDisplay = hoursLeft < 10 ? `0${hoursLeft}` : hoursLeft;
+									timeDisplay += `:${(min < 10 ? '0' + min : min)}`;
+									timeDisplay += `:${(secondsLeft < 10 ? '0' + secondsLeft : secondsLeft)}`;
+									document.getElementById("time").innerText = timeDisplay;
+								}
+							}
+						}
+					}
+					ws.onclose = () => {
+						setTimeout(connectws, 10000);
+					}
+				}
+			}
+			connectws();
+		</script>
+	</body>
+</html>
