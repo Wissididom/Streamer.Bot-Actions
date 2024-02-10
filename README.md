@@ -8,6 +8,8 @@
 
 [OfflineChannelLock](OfflineChannelLock/README.md)
 
+[Poll](Poll/README.md)
+
 [Raid](Raid/README.md)
 
 [SpeakWithSpeakerBot](SpeakWithSpeakerBot/README.md)
