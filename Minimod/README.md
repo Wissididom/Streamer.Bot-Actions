@@ -1,6 +1,6 @@
 # Streamer.Bot-Actions - Minimod
 
-1. Download and Import [the Action](Minimod.sb)
+1. Download and Import [the Action](Minimod.sb) - You can optionally view the code behind the actions before importing [here](Minimod.cs)
 2. Make sure both the Trigger and Action are enabled.
 
 Below are the possible Sub-Commands for that Command (`<required parameter>`, `[<optional parameter>]`):
