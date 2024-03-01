@@ -72,6 +72,6 @@ Below are the possible Sub-Commands for that Command (`<required parameter>`, `[
 * `!mod announcepurple <message>` - Sends an announcement to chat in purple
 * `!mod run <actionName>` - Run a Streamer.Bot Action by its name
 * `!mod runid <actionId>` - Run a Streamer.Bot Action by its id
-* `!mod cph <method> <parameters separated by a pipe>` - Run any kind method that is member of the CPH object (if enabled)
+* `!mod cph <method> <parameters separated by a pipe>` - Run any kind of method that is member of the CPH object (if enabled)
 
 TODO: Make it possible to disable specific Sub-Commands
