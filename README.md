@@ -14,6 +14,8 @@
 
 [SpeakWithSpeakerBot](SpeakWithSpeakerBot/README.md)
 
+[TemperatureConverter](TemperatureConverter/README.md)
+
 [TimeoutGivenUser](TimeoutGivenUser/README.md)
 
 [Timer](Timer/README.md)
