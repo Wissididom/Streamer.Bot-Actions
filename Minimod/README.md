@@ -15,17 +15,23 @@ Below are the possible Sub-Commands for that Command (`<required parameter>`, `[
 * `!mod followeroff` - Disable Followers-Only-Mode
 * `!mod followersoff` - Disable Followers-Only-Mode
 * `!mod whisper <user> <text>` - Whisper User from Broadcaster- or Bot-Account, depending on the configuration
+* `!mod w <user> <text>` - Whisper User from Broadcaster- or Bot-Account, depending on the configuration
 * `!mod mod <user>` - Make a User a Mod
 * `!mod unmod <user>` - Remove a User from being a Mod
 * `!mod vip <user>` - Make a User a VIP
 * `!mod unvip <user>` - Remove a User from being a VIP
 * `!mod message <text>` - Send a message in Twitch Chat from the Broadcaster- or Bot-Account, depending on the configuration
+* `!mod msg <text>` - Send a message in Twitch Chat from the Broadcaster- or Bot-Account, depending on the configuration
+* `!mod /me <text>` - Send a /me message in Twitch Chat from the Broadcaster- or Bot-Account, depending on the configuration
 * `!mod slashme <text>` - Send a /me message in Twitch Chat from the Broadcaster- or Bot-Account, depending on the configuration
 * `!mod clear` - Clears chat
 * `!mod delete <message-ID>` - Delete a single message in chat. Requires Third-Party-Software or Programming Skills to find the message id.
+* `!mod blockterm <term>` - Adds an AutoMod blocked term
+* `!mod approve <messageId>` - Approves an AutoMod held message
 * `!mod settags <tags>` - Sets the Channel Tags
 * `!mod addtag <tag>` - Adds a Channel Tag
 * `!mod removetag <tag>` - Removes a Channel Tag
+* `!mod cleartags` - Removes all Channel Tags
 * `!mod soid <user-ID>` - Shoutout a User by User-ID
 * `!mod shoutoutid <user-ID>` - Shoutout a User by User-ID
 * `!mod so <username>` - Shoutout a User by Username

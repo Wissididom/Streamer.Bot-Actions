@@ -116,6 +116,8 @@ public class CPHInline
 					CPH.SendMessage($"Invalid Usage, Usage: {command} unvip <userName>", BOT);
 				}
 				break;
+			} case "msg": {
+				goto case "message";
 			} case "message": {
 				if (splitted.Length > 1) {
 					string message = "";
@@ -135,7 +137,7 @@ public class CPHInline
 					}
 					CPH.TwitchReplyToMessage(message.Trim(), splitted[1], BOT);
 				} else {
-					CPH.SendMessage($"Invalid Usage, Usage: {command} message <message>", BOT);
+					CPH.SendMessage($"Invalid Usage, Usage: {command} reply <messageId> <message>", BOT);
 				}
 				break;
 			} case "/me": {
@@ -211,7 +213,7 @@ public class CPHInline
 						if (!skipErrorOutput) CPH.SendMessage("Failed to approve", BOT);
 					}
 				} else {
-					CPH.SendMessage($"Invalid Usage, Usage: {command} approve <term>", BOT);
+					CPH.SendMessage($"Invalid Usage, Usage: {command} approve <messageId>", BOT);
 				}
 				break;
 			} case "settags": {
