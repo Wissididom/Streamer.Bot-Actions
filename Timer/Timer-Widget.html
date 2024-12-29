@@ -31,7 +31,7 @@
 						const msg = event.data;
 						console.log(msg);
 						const wsdata = JSON.parse(msg);
-						if (wsdata.event?.source === 'None') {
+						if (wsdata.event?.source === 'General') {
 							if (wsdata.event.type === 'Custom') {
 								if (wsdata.data.time === 0) {
 									document.getElementById("time").innerText = '';
