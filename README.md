@@ -2,6 +2,8 @@
 
 [2MinuteEmoteOnly](2MinuteEmoteOnly/README.md)
 
+[AppAccessSendMessage](AppAccessSendMessage/README.md)
+
 [Echo](Echo/README.md)
 
 [Minimod](Minimod/README.md)
