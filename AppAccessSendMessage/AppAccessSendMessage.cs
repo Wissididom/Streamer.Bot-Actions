@@ -9,10 +9,11 @@ public class CPHInline
 {
 	public bool Execute()
 	{
+		TwitchUserInfo broadcasterInfo = CPH.TwitchGetBroadcaster();
 		string tokenVarName = CPH.TryGetArg("tokenVarName", out tokenVarName) ? tokenVarName : null;
 		string clientId = CPH.TryGetArg("twitchClientId", out clientId) ? clientId : null;
 		string clientSecret = CPH.TryGetArg("twitchClientSecret", out clientSecret) ? clientSecret : null;
-		string broadcasterId = CPH.TryGetArg("broadcastUserId", out broadcasterId) ? broadcasterId : null;
+		string broadcasterId = CPH.TryGetArg("broadcastUserId", out broadcasterId) ? broadcasterId : broadcasterInfo.UserId;
 		string senderId = CPH.TryGetArg("senderId", out senderId) ? senderId : null;
 		string message = CPH.TryGetArg("message", out message) ? message : null;
 		bool forSourceOnly = CPH.TryGetArg("forSourceOnly", out forSourceOnly) ? forSourceOnly : false;
